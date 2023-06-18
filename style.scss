@@ -1,0 +1,206 @@
+%btn {
+    color: #fff;
+    cursor: pointer;
+    border-radius: 5px;
+    border: none;
+    padding: 10px 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: aquamarine;
+    background-image: url(images/leaves.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: 'Roboto', sans-serif;
+}
+
+.box {
+    padding: 50px;
+    min-height: 100vh;
+    height: 100%;
+    display: flex;
+    align-items: flex-start;
+    position: relative;
+    overflow-x: auto;
+}
+
+.boards {
+    display: flex;
+    &__item {
+        display: flex;
+        flex-direction: column;
+        align-self: baseline;
+        width: 250px;
+        background-color: rgba(0, 0, 0, .5);
+        margin: 0 15px;
+        padding: 10px;
+        transition: .3 all ease;
+        border-radius: 3px;
+        .title {
+            padding: 5px;
+            color: #fff;
+            &:focus {
+                border-radius: 5px;
+                outline: 1px solid rgba(168, 168, 168, .45);
+            }
+        }
+        .list {
+            min-height: 50px;
+            &__item {
+                background-color: #fefefe;
+                border-radius: 5px;
+                padding: 10px;
+                text-align: center;
+                margin: 4px 0;
+                cursor: pointer;
+                font-size: 16px;
+                outline: none;
+                border: none;
+            }
+        }
+        .form {
+            border-radius: 3px;
+            margin-top: auto;
+            display: none;
+            .textarea {
+                resize: vertical;
+                height: 60px;
+                border-radius: 5px;
+                border: none;
+                background-color: #fff;
+                padding: 10px;
+                width: 100%;
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+    }
+}
+
+.buttons {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 5px;
+    &__add-btn {
+        display: block;
+        background-color: rgba(52, 239, 32, 0.867);
+        margin-right: 5px;
+        @extend %btn;
+    }
+    &__cancel-btn {
+        background-color: #cf5050;
+        @extend %btn;
+    }
+}
+
+.add-btn {
+    color: #FFFFFF;
+    text-align: center;
+    margin-top: 5px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    & span {
+        font-weight: 700;
+        font-size: 20px;
+        vertical-align: middle;
+    }
+}
+
+.add-board {
+    @extend %btn;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin-left: auto;
+    margin-right: 50px;
+    white-space: nowrap;
+    padding-left: 50px;
+    padding-right: 50px;
+    & span {
+        font-weight: 700;
+        font-size: 20px;
+        vertical-align: middle;
+    }
+}
+
+.settings {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+
+    &__options {
+        display: none;
+        margin-right: 10px;
+        align-items: center;
+        transition: .2s;
+    }
+
+    &__color {
+        border-radius: 50%;
+        border: 2px solid black;
+        background-color: red;
+        width: 20px;
+        height: 20px;
+        margin: 5px;
+        cursor: pointer;
+        transition: 0.3s;
+        position: absolute;
+        display: inline-block;
+
+        &:hover {
+            transform: scale(1.2);
+        }
+
+        &:hover .is-active-hover {
+            display: block;
+        }
+    }
+
+    &__icon {
+        cursor: pointer;
+        transition: .3s;
+    }
+}
+
+.color-setting {
+    background-color: transparent;
+    border-color: transparent;
+    position: relative;
+    display: flex;
+    align-items: center;
+    transition: .3s;
+
+    &:hover .settings__options {
+        display: flex;
+    }
+
+    &:hover .settings__color {
+        opacity: 1;
+        position: relative;
+    }
+}
+
+
+.is-active-hover {
+    position: absolute;
+    bottom: 30px;
+    right: -40px;
+    width: 100px;
+    height: 73px;
+    display: none;
+    filter: drop-shadow(0px 0px 10px rgba(0,0,0,0.2));
+
+    & img {
+        width: 100px;
+        height: 73px;
+        object-fit: cover;
+        object-position: top;
+        border-radius: 5px;
+    }
+}

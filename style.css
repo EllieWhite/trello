@@ -1,0 +1,165 @@
+.buttons__add-btn, .buttons__cancel-btn, .add-board {
+  color: #fff;
+  cursor: pointer;
+  border-radius: 5px;
+  border: none;
+  padding: 10px 12px; }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+body {
+  background-color: aquamarine;
+  background-image: url(images/leaves.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: 'Roboto', sans-serif; }
+
+.box {
+  padding: 50px;
+  min-height: 100vh;
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  position: relative;
+  overflow-x: auto; }
+
+.boards {
+  display: flex; }
+  .boards__item {
+    display: flex;
+    flex-direction: column;
+    align-self: baseline;
+    width: 250px;
+    background-color: rgba(0, 0, 0, 0.5);
+    margin: 0 15px;
+    padding: 10px;
+    transition: .3 all ease;
+    border-radius: 3px; }
+    .boards__item .title {
+      padding: 5px;
+      color: #fff; }
+      .boards__item .title:focus {
+        border-radius: 5px;
+        outline: 1px solid rgba(168, 168, 168, 0.45); }
+    .boards__item .list {
+      min-height: 50px; }
+      .boards__item .list__item {
+        background-color: #fefefe;
+        border-radius: 5px;
+        padding: 10px;
+        text-align: center;
+        margin: 4px 0;
+        cursor: pointer;
+        font-size: 16px;
+        outline: none;
+        border: none; }
+    .boards__item .form {
+      border-radius: 3px;
+      margin-top: auto;
+      display: none; }
+      .boards__item .form .textarea {
+        resize: vertical;
+        height: 60px;
+        border-radius: 5px;
+        border: none;
+        background-color: #fff;
+        padding: 10px;
+        width: 100%; }
+        .boards__item .form .textarea:focus {
+          outline: none; }
+
+.buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 5px; }
+  .buttons__add-btn {
+    display: block;
+    background-color: rgba(52, 239, 32, 0.867);
+    margin-right: 5px; }
+  .buttons__cancel-btn {
+    background-color: #cf5050; }
+
+.add-btn {
+  color: #FFFFFF;
+  text-align: center;
+  margin-top: 5px;
+  border: none;
+  background-color: transparent;
+  cursor: pointer; }
+  .add-btn span {
+    font-weight: 700;
+    font-size: 20px;
+    vertical-align: middle; }
+
+.add-board {
+  background-color: rgba(0, 0, 0, 0.5);
+  margin-left: auto;
+  margin-right: 50px;
+  white-space: nowrap;
+  padding-left: 50px;
+  padding-right: 50px; }
+  .add-board span {
+    font-weight: 700;
+    font-size: 20px;
+    vertical-align: middle; }
+
+.settings {
+  position: fixed;
+  bottom: 0;
+  right: 0; }
+  .settings__options {
+    display: none;
+    margin-right: 10px;
+    align-items: center;
+    transition: .2s; }
+  .settings__color {
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: red;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    position: absolute;
+    display: inline-block; }
+    .settings__color:hover {
+      transform: scale(1.2); }
+    .settings__color:hover .is-active-hover {
+      display: block; }
+  .settings__icon {
+    cursor: pointer;
+    transition: .3s; }
+
+.color-setting {
+  background-color: transparent;
+  border-color: transparent;
+  position: relative;
+  display: flex;
+  align-items: center;
+  transition: .3s; }
+  .color-setting:hover .settings__options {
+    display: flex; }
+  .color-setting:hover .settings__color {
+    opacity: 1;
+    position: relative; }
+
+.is-active-hover {
+  position: absolute;
+  bottom: 30px;
+  right: -40px;
+  width: 100px;
+  height: 73px;
+  display: none;
+  filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.2)); }
+  .is-active-hover img {
+    width: 100px;
+    height: 73px;
+    object-fit: cover;
+    object-position: top;
+    border-radius: 5px; }
+
+/*# sourceMappingURL=style.css.map */
